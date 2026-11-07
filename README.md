@@ -15,14 +15,12 @@
 **👉 [Open the Live KPI Dashboard](https://logistics-kpi-analytics.streamlit.app/)**
 
 The dashboard includes:
-- Real-time KPI cards (Delay Rate, Asset Utilization, Waiting Time, ...)
+- Real-time KPI cards (Delay Rate, Asset Utilization, Waiting Time)
 - Interactive filters (Asset, Traffic Status, Shipment Status)
 - Root Cause Analysis of delays
 - Asset performance comparison
 - Inventory vs Demand Forecast view
 - Export filtered data
-
-> Designed to support daily stand-ups, operational reviews, and data-driven decision making.
 
 ---
 
@@ -37,38 +35,69 @@ It is particularly relevant for roles such as:
 - Fulfillment Center Process Support
 - Global Transportation Logistics (GTL) operations
 
-**Key capabilities shown:**
-- Monitoring critical logistics KPIs
-- Systematic root cause analysis of delays
-- Creating clear, stakeholder-ready visualizations
-- Supporting data-driven process improvement
+---
+
+## 📊 Key Insights from the Analysis
+
+### 1. Delay Root Causes
+
+| Rank | Delay Reason              | Observation |
+|------|---------------------------|-----------|
+| 1    | Weather                   | Highest driver of delays |
+| 2    | Unknown / Not Specified   | Data quality gap – needs better reason capturing |
+| 3    | Traffic                   | Significant controllable factor |
+| 4    | Mechanical Failure        | Indicates potential maintenance opportunities |
+
+**Insight:** Weather and Traffic together account for a large share of delays. Improving contingency planning for weather and route optimization can have high impact.
+
+### 2. Asset Utilization
+- Utilization across trucks is relatively balanced (mostly between **76% – 80.7%**).
+- There is limited variation between assets → fleet is used quite evenly.
+- Still room for improvement toward higher utilization targets (e.g. 85%+).
+
+### 3. Waiting Time
+- Delayed shipments show a wider and higher distribution of waiting time compared to on-time shipments.
+- Waiting time is both a symptom and a contributor to overall delays.
+- Reducing waiting time should be treated as a priority process improvement lever.
+
+### 4. Recommended Actions
+
+| Priority | Action | Expected Impact |
+|----------|--------|-----------------|
+| High | Set Delay Rate threshold (e.g. 45%) and escalate when breached | Faster reaction to performance drops |
+| High | Improve capture of delay reasons (reduce "Unknown") | Better root cause analysis |
+| High | Focus weekly reviews on Weather & Traffic delays | Targeted process improvement |
+| Medium | Track Waiting Time as a leading indicator | Earlier detection of bottlenecks |
+| Medium | Review asset utilization and reallocate where needed | Higher fleet efficiency |
 
 ---
 
-## 🎯 Key Performance Indicators
+## 🖼️ Analysis Charts
 
-| KPI | Description | Business Impact |
-|-----|-------------|-----------------|
-| **Logistics Delay Rate** | % of shipments with delays | Direct impact on OTIF & customer experience |
-| **Asset Utilization** | How efficiently trucks/assets are used | Cost efficiency & capacity planning |
-| **Average Waiting Time** | Time assets spend waiting | Process bottleneck identification |
-| **Inventory vs Demand Forecast** | Alignment between stock and predicted demand | Inventory optimization |
-| **Shipment Status Distribution** | In Transit / Delivered / Delayed ratios | Operational health overview |
-| **Delay Root Causes** | Traffic, Weather, Mechanical Failure, etc. | Targeted process improvement |
+### Root Cause of Delays
+
+![Root Cause of Delays](visualizations/02_delay_reasons.png)
+
+### Asset Utilization & Waiting Time
+
+![Utilization and Waiting Time](visualizations/03_utilization_and_waiting.png)
+
+### Shipment Status & Traffic Impact
+
+![Status and Traffic](visualizations/01_status_and_traffic.png)
+
+### Inventory vs Demand Forecast
+
+![Inventory vs Demand](visualizations/04_inventory_vs_demand.png)
 
 ---
 
 ## 🛠️ How to Run Locally
 
 ```bash
-# Clone the repository
 git clone https://github.com/AZFARHAD24511/logistics-kpi-analytics.git
 cd logistics-kpi-analytics
-
-# Install dependencies
 pip install -r requirements.txt
-
-# Run the interactive dashboard
 streamlit run app.py
 ```
 
@@ -82,9 +111,10 @@ logistics-kpi-analytics/
 ├── notebooks/
 │   └── 01_logistics_kpi_analysis.ipynb
 ├── src/
-│   └── kpi_calculator.py           # Reusable KPI functions
+│   └── kpi_calculator.py
 ├── data/
-│   └── README.md                   # Dataset documentation
+│   └── README.md
+├── visualizations/                 # Generated charts
 ├── reports/
 │   └── executive_summary.md
 ├── requirements.txt
@@ -102,11 +132,7 @@ logistics-kpi-analytics/
 - **Records:** 1,000 rows of simulated 2024 logistics operations
 - **Content:** Asset tracking, inventory levels, shipment status, traffic conditions, waiting times, delay reasons, IoT sensor data (temperature, humidity), and demand forecast
 
-The dataset is dedicated to the public domain under **CC0 1.0 Universal**. You can copy, modify, distribute, and use it even for commercial purposes without asking permission.
-
-> When using this dataset, you should not imply endorsement by the original author.
-
-Full column descriptions are available in [`data/README.md`](data/README.md).
+The dataset is dedicated to the public domain under **CC0 1.0 Universal**.
 
 ---
 
@@ -121,5 +147,5 @@ Full column descriptions are available in [`data/README.md`](data/README.md).
 
 ## 📄 License
 
-This project code is licensed under the MIT License.  
-The dataset used in this project is licensed under [CC0: Public Domain](https://creativecommons.org/publicdomain/zero/1.0/).
+- **Project code:** MIT License  
+- **Dataset:** [CC0: Public Domain](https://creativecommons.org/publicdomain/zero/1.0/)
