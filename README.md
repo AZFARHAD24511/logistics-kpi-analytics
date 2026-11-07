@@ -1,48 +1,76 @@
-# 🚚 Logistics & Supply Chain KPI Analytics  
-### Performance Metrics | Root Cause Analysis | Data-Driven Decision Making
+# 🚚 Logistics & Supply Chain KPI Analytics
 
+### Interactive Management Dashboard | Root Cause Analysis | Data-Driven Operations
+
+[![Live Dashboard](https://img.shields.io/badge/🔴_Live_Dashboard-Click_Here-red?style=for-the-badge)](https://logistics-kpi-analytics.streamlit.app/)
 ![Python](https://img.shields.io/badge/Python-3.10+-blue?logo=python)
-![Pandas](https://img.shields.io/badge/Pandas-1.5+-green?logo=pandas)
-![Seaborn](https://img.shields.io/badge/Seaborn-Visualization-orange)
+![Streamlit](https://img.shields.io/badge/Streamlit-Dashboard-FF4B4B?logo=streamlit)
+![Plotly](https://img.shields.io/badge/Plotly-Interactive-3F4F75)
 ![License](https://img.shields.io/badge/License-MIT-yellow)
-![Status](https://img.shields.io/badge/Status-Portfolio%20Project-success)
+
+---
+
+## 🔗 Live Interactive Dashboard
+
+**👉 [Open the Live KPI Dashboard](https://logistics-kpi-analytics.streamlit.app/)**
+
+The dashboard includes:
+- Real-time KPI cards (Delay Rate, Asset Utilization, Waiting Time, ...)
+- Interactive filters (Asset, Traffic Status, Shipment Status)
+- Root Cause Analysis of delays
+- Asset performance comparison
+- Inventory vs Demand Forecast view
+- Export filtered data
+
+> Designed to support daily stand-ups, operational reviews, and data-driven decision making.
 
 ---
 
 ## 📌 Project Overview
 
-This repository contains a professional **Key Performance Indicator (KPI)** analysis for a smart logistics and supply chain dataset.  
-The project demonstrates end-to-end analytical capabilities that are directly relevant to operational roles in **Fulfillment Centers**, **Rapid Asset Deployment (RAD)**, and **Global Transportation Logistics (GTL)** environments.
+This project demonstrates professional **KPI tracking**, **root cause analysis**, and **operational reporting** skills for logistics and supply chain environments.
 
-**Core Focus Areas (aligned with Process Assistant / Operations roles):**
-- Tracking and visualization of critical logistics KPIs
-- Systematic root cause analysis of delays and bottlenecks
-- Ad-hoc reporting and trend identification
-- Data-driven recommendations for process optimization
-- Clear communication of insights to stakeholders
+It is particularly relevant for roles such as:
+
+- **RAD Process Assistant** (Rapid Asset Deployment)
+- Logistics / Transportation Coordinator
+- Fulfillment Center Process Support
+- Global Transportation Logistics (GTL) operations
+
+**Key capabilities shown:**
+- Monitoring critical logistics KPIs
+- Systematic root cause analysis of delays
+- Creating clear, stakeholder-ready visualizations
+- Supporting data-driven process improvement
 
 ---
 
-## 🎯 Key Performance Indicators Analyzed
+## 🎯 Key Performance Indicators
 
 | KPI | Description | Business Impact |
 |-----|-------------|-----------------|
-| **Logistics Delay Rate** | Percentage of shipments with delays | Direct impact on OTIF & customer experience |
+| **Logistics Delay Rate** | % of shipments with delays | Direct impact on OTIF & customer experience |
 | **Asset Utilization** | How efficiently trucks/assets are used | Cost efficiency & capacity planning |
 | **Average Waiting Time** | Time assets spend waiting | Process bottleneck identification |
-| **Inventory vs Demand Forecast Accuracy** | Alignment between stock and predicted demand | Inventory optimization |
+| **Inventory vs Demand Forecast** | Alignment between stock and predicted demand | Inventory optimization |
 | **Shipment Status Distribution** | In Transit / Delivered / Delayed ratios | Operational health overview |
-| **Delay Root Causes** | Traffic, Weather, Detour, etc. | Targeted process improvement |
+| **Delay Root Causes** | Traffic, Weather, Mechanical Failure, etc. | Targeted process improvement |
 
 ---
 
-## 🔍 What This Project Demonstrates
+## 🛠️ How to Run Locally
 
-✅ **Descriptive Analytics** – Understanding “What happened?”  
-✅ **Diagnostic Analytics** – Root cause analysis of delays  
-✅ **Trend Recognition** – Identifying patterns across assets, locations, and time  
-✅ **Stakeholder-Ready Visualizations** – Charts suitable for stand-up meetings and reports  
-✅ **Clean Code & Reproducibility** – Professional structure ready for collaboration  
+```bash
+# Clone the repository
+git clone https://github.com/AZFARHAD24511/logistics-kpi-analytics.git
+cd logistics-kpi-analytics
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run the interactive dashboard
+streamlit run app.py
+```
 
 ---
 
@@ -50,105 +78,48 @@ The project demonstrates end-to-end analytical capabilities that are directly re
 
 ```
 logistics-kpi-analytics/
-├── data/                       # Dataset documentation
-│   └── README.md
+├── app.py                          # Interactive Streamlit Dashboard
 ├── notebooks/
 │   └── 01_logistics_kpi_analysis.ipynb
-├── src/                        # Reusable KPI calculation functions
-│   └── kpi_calculator.py
-├── visualizations/             # Charts for presentations / stand-ups
-├── reports/                    # Executive summaries
+├── src/
+│   └── kpi_calculator.py           # Reusable KPI functions
+├── data/
+│   └── README.md                   # Dataset documentation
+├── reports/
 │   └── executive_summary.md
-├── docs/
 ├── requirements.txt
-├── .gitignore
 └── README.md
 ```
 
 ---
 
-## 🛠️ How to Run
+## 📊 Dataset
 
-1. Clone the repository
-```bash
-git clone https://github.com/<your-username>/logistics-kpi-analytics.git
-cd logistics-kpi-analytics
-```
+**Smart Logistics Supply Chain Dataset**
 
-2. Create virtual environment (recommended)
-```bash
-python -m venv venv
-source venv/bin/activate   # On Windows: venv\Scripts\activate
-```
+- **Source:** [Kaggle – Smart Logistics Supply Chain Dataset](https://www.kaggle.com/datasets/smart-logistics-supply-chain-dataset)
+- **License:** [CC0: Public Domain](https://creativecommons.org/publicdomain/zero/1.0/)
+- **Records:** 1,000 rows of simulated 2024 logistics operations
+- **Content:** Asset tracking, inventory levels, shipment status, traffic conditions, waiting times, delay reasons, IoT sensor data (temperature, humidity), and demand forecast
 
-3. Install dependencies
-```bash
-pip install -r requirements.txt
-```
+The dataset is dedicated to the public domain under **CC0 1.0 Universal**. You can copy, modify, distribute, and use it even for commercial purposes without asking permission.
 
-4. Open the main notebook
-```bash
-jupyter notebook notebooks/01_logistics_kpi_analysis.ipynb
-```
+> When using this dataset, you should not imply endorsement by the original author.
 
-> **Note:** The original dataset is available on Kaggle:  
-> [Smart Logistics Supply Chain Dataset](https://www.kaggle.com/datasets/smart-logistics-supply-chain-dataset)
-
----
-
-## 📊 Sample Insights (from analysis)
-
-- **Overall Delay Rate**: ~56.6% of records show logistics delays → significant opportunity for process improvement.
-- **Average Asset Utilization**: ~79.6% (range 60–100%) → room for better capacity planning.
-- **Top Delay Drivers**: Traffic and Weather conditions appear frequently → potential for better route optimization and contingency planning.
-- **Waiting Time** averages ~35 minutes with high variance → process standardization opportunity.
-
-These types of insights can be presented in daily stand-ups, weekly performance reviews, or ad-hoc stakeholder reports.
-
----
-
-## 💼 Relevance to Operations / Process Assistant Roles
-
-This project reflects the exact skills required in roles such as:
-
-- **RAD Process Assistant** (Rapid Asset Deployment)
-- Logistics / Transportation Coordinators
-- Fulfillment Center Process Analysts
-- Supply Chain Operations Support
-
-**Demonstrated competencies:**
-- KPI tracking & presentation
-- Root cause analysis
-- Data-driven decision making
-- Clear communication of operational insights
-- Continuous process improvement mindset
-
----
-
-## 📈 Future Enhancements
-
-- Interactive dashboard (Streamlit / Power BI)
-- Automated daily KPI report generation
-- Predictive delay risk model
-- Integration with sample SQL queries for ad-hoc reporting
+Full column descriptions are available in [`data/README.md`](data/README.md).
 
 ---
 
 ## 👤 Author
 
-**AZFARHAD24511**  
-Portfolio project focused on Supply Chain & Logistics Operations  
-Skills demonstrated: KPI tracking • Root Cause Analysis • Data-driven recommendations • Stakeholder communication
+**Azizallah Farhadi**
 
 - GitHub: [AZFARHAD24511](https://github.com/AZFARHAD24511)
-- LinkedIn: [*azizallah-farhadi-19bb3438*](https://www.linkedin.com/in/azizallah-farhadi-19bb3438/)
+- LinkedIn: [Azizallah Farhadi](https://www.linkedin.com/in/azizallah-farhadi-19bb3438/)
 
 ---
 
 ## 📄 License
 
-This project is licensed under the MIT License – see the [LICENSE](LICENSE) file for details.
-
----
-
-*Built with a focus on operational excellence and continuous improvement.*
+This project code is licensed under the MIT License.  
+The dataset used in this project is licensed under [CC0: Public Domain](https://creativecommons.org/publicdomain/zero/1.0/).
