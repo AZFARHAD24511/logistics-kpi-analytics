@@ -1,6 +1,6 @@
 # 🚚 Logistics & Supply Chain KPI Analytics
 
-### Interactive Management Dashboard | Root Cause Analysis | Predictive Insights
+### Interactive Management Dashboard | Root Cause Analysis | Predictive & Temporal Insights
 
 [![Live Dashboard](https://img.shields.io/badge/🔴_Live_Dashboard-Click_Here-red?style=for-the-badge)](https://logistics-kpi-analytics.streamlit.app/)
 ![Python](https://img.shields.io/badge/Python-3.10+-blue?logo=python)
@@ -27,7 +27,7 @@ The dashboard includes:
 
 ## 📌 Project Overview
 
-This project demonstrates professional **KPI tracking**, **root cause analysis**, and **predictive thinking** for logistics and supply chain environments.
+This project demonstrates professional **KPI tracking**, **root cause analysis**, **predictive thinking**, and **temporal pattern analysis** for logistics and supply chain environments.
 
 It is particularly relevant for roles such as:
 
@@ -36,9 +36,22 @@ It is particularly relevant for roles such as:
 - Fulfillment Center Process Support
 - Global Transportation Logistics (GTL) operations
 
-**Core idea behind this project:**  
+**Core philosophy:**  
 A strong analyst should not only report what already went wrong. The real value is to **anticipate problems before they fully materialize** and enable the team to act early.  
 In other words: *prevention is better than reaction*. Accurate prediction and timely action can significantly reduce operational disruptions.
+
+Time is a critical dimension in logistics. Delays, waiting times, and asset utilization often follow patterns by **hour of day**, **day of week**, **month**, and **season**. Understanding these temporal patterns allows better planning, staffing, and proactive intervention.
+
+---
+
+## 📊 Analytical Layers in This Project
+
+| Layer | Focus | Notebook |
+|-------|-------|----------|
+| **Descriptive** | What happened? (KPI summary, status distribution) | `01_logistics_kpi_analysis.ipynb` |
+| **Diagnostic** | Why did it happen? (Root cause of delays) | `01_logistics_kpi_analysis.ipynb` |
+| **Predictive** | What is likely to happen? (Delay probability + leading indicators) | `02_predictive_delay_model.ipynb` |
+| **Temporal** | When does it happen? (Hour, day, month, season patterns) | `03_temporal_analysis.ipynb` |
 
 ---
 
@@ -63,23 +76,27 @@ In other words: *prevention is better than reaction*. Accurate prediction and ti
 ### 3. Waiting Time
 - Delayed shipments show a wider and higher distribution of waiting time compared to on-time shipments.
 - Waiting time is both a symptom and a **leading indicator** of delays.
-- Reducing waiting time should be treated as a priority process improvement lever.
 
-### 4. Recommended Actions
+### 4. Temporal Patterns (Time-based Insights)
+- Delay rate and waiting time vary by **hour of day** → some hours are systematically riskier.
+- Performance differs across **days of the week** → useful for staffing and capacity planning.
+- **Monthly and seasonal** patterns can reveal recurring pressure periods (e.g. weather-related).
+- Daily trend view helps detect sudden spikes that need ad-hoc investigation.
+
+### 5. Recommended Actions
 
 | Priority | Action | Expected Impact |
 |----------|--------|-----------------|
 | High | Set Delay Rate threshold (e.g. 45%) and escalate when breached | Faster reaction to performance drops |
 | High | Improve capture of delay reasons (reduce "Unknown") | Better root cause analysis |
 | High | Focus weekly reviews on Weather & Traffic delays | Targeted process improvement |
+| High | Monitor high-risk hours and weekdays | Better shift & capacity planning |
 | Medium | Track Waiting Time as a leading indicator | Earlier detection of bottlenecks |
 | Medium | Review asset utilization and reallocate where needed | Higher fleet efficiency |
 
 ---
 
 ## 🔮 Predictive View & Leading Indicators
-
-In addition to descriptive and diagnostic analysis, this project includes a **predictive component**.
 
 A simple machine learning model (Random Forest) was trained to estimate the probability of a logistics delay and to rank the most influential factors.
 
@@ -96,9 +113,23 @@ A strong analyst helps the organization act *before* the problem becomes expensi
 | Asset Utilization | < 70% | Check load planning |
 | Inventory Gap | Large negative gap | Align with planning team |
 
-These signals can be reviewed in daily stand-ups as early warning indicators.
-
 **Notebook:** `notebooks/02_predictive_delay_model.ipynb`
+
+---
+
+## 🕒 Temporal Analysis
+
+Because every record has a timestamp, the dataset can be analyzed as a time-aware operational log.
+
+Key time dimensions examined:
+- **Hour of day** – identifies peak risk windows
+- **Day of week** – reveals weekday vs weekend patterns
+- **Month & Season** – surfaces seasonal pressure
+- **Daily trend** – detects abnormal spikes over the year
+
+These insights support proactive planning instead of purely reactive firefighting.
+
+**Notebook:** `notebooks/03_temporal_analysis.ipynb`
 
 ---
 
@@ -118,6 +149,13 @@ These signals can be reviewed in daily stand-ups as early warning indicators.
 
 ### Feature Importance (Predictive Model)
 ![Feature Importance](visualizations/05_feature_importance.png)
+
+### Temporal Patterns
+![Hourly Patterns](visualizations/06_hourly_patterns.png)
+![Day of Week](visualizations/07_day_of_week_patterns.png)
+![Monthly Patterns](visualizations/08_monthly_patterns.png)
+![Seasonal Delay](visualizations/09_seasonal_delay.png)
+![Daily Trend](visualizations/10_daily_trend.png)
 
 ---
 
@@ -139,7 +177,8 @@ logistics-kpi-analytics/
 ├── app.py                              # Interactive Streamlit Dashboard
 ├── notebooks/
 │   ├── 01_logistics_kpi_analysis.ipynb # Descriptive + Diagnostic analysis
-│   └── 02_predictive_delay_model.ipynb # Predictive model & leading indicators
+│   ├── 02_predictive_delay_model.ipynb # Predictive model & leading indicators
+│   └── 03_temporal_analysis.ipynb      # Hour / Day / Month / Season patterns
 ├── src/
 │   └── kpi_calculator.py
 ├── data/
