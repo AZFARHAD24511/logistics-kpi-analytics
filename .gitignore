@@ -1,0 +1,38 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+.env/
+.venv/
+env/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Data files (large CSVs should not be committed)
+data/*.csv
+data/*.xlsx
+!data/README.md
+!data/sample_*.csv
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# Output
+*.log
+reports/*.pdf
+visualizations/*.png
+!visualizations/.gitkeep
+
+# Secrets
+.env
+*.key
