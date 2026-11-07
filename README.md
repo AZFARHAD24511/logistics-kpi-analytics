@@ -141,7 +141,7 @@ Portfolio project focused on Supply Chain & Logistics Operations
 Skills demonstrated: KPI tracking • Root Cause Analysis • Data-driven recommendations • Stakeholder communication
 
 - GitHub: [AZFARHAD24511](https://github.com/AZFARHAD24511)
-- LinkedIn: *Add your LinkedIn profile link here*
+- LinkedIn: [*Add your LinkedIn profile link here*](https://www.linkedin.com/in/azizallah-farhadi-19bb3438/)
 
 ---
 
